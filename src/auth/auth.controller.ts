@@ -13,15 +13,9 @@ export class AuthController {
     return this.authService.register(registerDto);
   }
 
-  @HttpCode(HttpStatus.OK)
-  @Post("login")
+  @Post()
   login(@Body() loginDto: LoginDto) {
     return this.authService.login(loginDto);
   }
 
-  @Get('profile')
-@UseGuards(AuthGuard)
-profile(@Request() req) {
-  return 'profile';
-}
 }
